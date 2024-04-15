@@ -46,10 +46,12 @@ export const LandingPage = () => {
               <a href="mailto:kayvia@kaythedev.com">
                 <p className="font-bold">kayvia@kaythedev.com</p>
               </a>
-             <div className="flex gap-1 items-center justify-center text-center">
-                <InstagramIcon/>
-                <p className="font-bold">kayviaharriott</p>
-             </div>
+             <a href="https://www.instagram.com/kayviaharriott" target="_blank">
+               <div className="flex gap-1 items-center justify-center text-center">
+                  <InstagramIcon/>
+                  <p className="font-bold">kayviaharriott</p>
+               </div>
+             </a>
             </div>
           </div>
         </Box>
