@@ -1,6 +1,6 @@
 import { Box, Button, InputLabel, TextField } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { InputLabelStyling } from "../styles/ComponentStyling";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,9 @@ export const LandingPage = () => {
       state: { data: { trn, controlNumber, licenseIssue, dateOfBirth } },
     });
   };
+  useEffect(() => {
+    document.title = 'Kay the Dev | Kayvia Harriott'; // Change 'New Title' to whatever you want
+  }, []);
   return (
     <>
       <Box
