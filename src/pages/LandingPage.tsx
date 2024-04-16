@@ -5,7 +5,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { InputLabelStyling } from "../styles/ComponentStyling";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
-import InstagramIcon from '@mui/icons-material/Instagram';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -19,12 +20,12 @@ export const LandingPage = () => {
     });
   };
   useEffect(() => {
-    document.title = 'Kay the Dev | Kayvia Harriott'; // Change 'New Title' to whatever you want
+    document.title = "Kay the Dev | Kayvia Harriott"; // Change 'New Title' to whatever you want
   }, []);
   return (
     <>
       <Box
-        sx={{backgroundColor: "#E6F2F6"}}
+        sx={{ backgroundColor: "#E6F2F6" }}
         className="flex flex-col justify-center items-center h-screen gap-3 "
       >
         <Box
@@ -47,14 +48,20 @@ export const LandingPage = () => {
             </p>
             <div className="flex flex-col text-center items-center justify-center gap-1">
               <a href="mailto:kayvia@kaythedev.com">
-                <p className="font-bold">kayvia@kaythedev.com</p>
+                <div className="flex gap-1 items-center justify-center text-center">
+                  <MailOutlineIcon />
+                  <p className="font-bold">kayvia@kaythedev.com</p>
+                </div>
               </a>
-             <a href="https://www.instagram.com/kayviaharriott" target="_blank">
-               <div className="flex gap-1 items-center justify-center text-center">
-                  <InstagramIcon/>
+              <a
+                href="https://www.instagram.com/kayviaharriott"
+                target="_blank"
+              >
+                <div className="flex gap-1 items-center justify-center text-center">
+                  <InstagramIcon />
                   <p className="font-bold">kayviaharriott</p>
-               </div>
-             </a>
+                </div>
+              </a>
             </div>
           </div>
         </Box>
