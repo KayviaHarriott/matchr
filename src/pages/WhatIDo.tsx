@@ -6,6 +6,13 @@ import { Figma, Layout, Edit } from "react-feather";
 // import { faFigma } from '@fortawesome/free-solid-svg-icons';
 
 // const element = <FontAwesomeIcon icon={faEnvelope} />
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 
 export const WhatIDo = () => {
   const techStackList = ["REACTJS", "HTML/CSS", "TYPESCRIPT", "PYTHON", "PHP"];
@@ -32,11 +39,11 @@ export const WhatIDo = () => {
                 Curabitur viverra tempor orci.
               </p>
             </div>
-            <p className="font-light text-[14px] text-[gray]">
+            {/* <p className="font-light text-[14px] text-[gray]">
               Integer dictum accumsan ex ut aliquam. Phasellus ac ligula mi.
               Maecenas dictum elit sed nibh tempus pretium. Aenean feugiat
               sagittis velit, in laoreet ipsum semper at.
-            </p>
+            </p> */}
           </div>
         </div>
       ),
@@ -63,11 +70,11 @@ export const WhatIDo = () => {
                 Curabitur viverra tempor orci.
               </p>
             </div>
-            <p className="font-light text-[14px] text-[gray]">
+            {/* <p className="font-light text-[14px] text-[gray]">
               Integer dictum accumsan ex ut aliquam. Phasellus ac ligula mi.
               Maecenas dictum elit sed nibh tempus pretium. Aenean feugiat
               sagittis velit, in laoreet ipsum semper at.
-            </p>
+            </p> */}
           </div>
         </div>
       ),
@@ -96,11 +103,11 @@ export const WhatIDo = () => {
                 Curabitur viverra tempor orci.
               </p>
             </div>
-            <p className="font-light text-[14px] text-[gray]">
+            {/* <p className="font-light text-[14px] text-[gray]">
               Integer dictum accumsan ex ut aliquam. Phasellus ac ligula mi.
               Maecenas dictum elit sed nibh tempus pretium. Aenean feugiat
               sagittis velit, in laoreet ipsum semper at.
-            </p>
+            </p> */}
           </div>
         </div>
       ),
@@ -109,29 +116,34 @@ export const WhatIDo = () => {
 
   return (
     <>
-      <div className="w-screen h-screen flex items-center justify-center">
-        <div className="flex gap-4">
-          <div className="w-1/3 flex justify-end">
+      <div className="w-screen h-screen flex items-center justify-center p-3">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="sm:w-1/3 flex justify-center sm:justify-end">
             <p className="font-bold text-[32px]">whatido</p>
           </div>
-          <div className="w-2/3 flex flex-col gap-2">
+          <div className="sm:w-2/3 flex flex-col gap-2">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 {contentList.map((item, index) => (
-                  <Box
-                    sx={{
-                      backgroundColor: "white",
-                      padding: 2,
-                      borderRadius: 1,
-                      boxShadow: "3px 3px 14px 1px rgba(0,0,0,0.2)",
-                    }}
-                    className=""
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <div className="max-w-[300px]">
-                      {/* <p className="font-bold">{item.title}</p> */}
-                      <div>{item.content}</div>
-                    </div>
-                  </Box>
+                    <Box
+                      sx={{
+                        backgroundColor: "white",
+                        padding: 2,
+                        borderRadius: 1,
+                        boxShadow: "3px 3px 14px 1px rgba(0,0,0,0.2)",
+                      }}
+                      className=""
+                    >
+                      <div className="max-w-[300px]">
+                        {/* <p className="font-bold">{item.title}</p> */}
+                        <div>{item.content}</div>
+                      </div>
+                    </Box>
+                  </motion.div>
                 ))}
                 <div></div>
                 {/* <div>

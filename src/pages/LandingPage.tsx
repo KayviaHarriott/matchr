@@ -18,7 +18,7 @@ import { WhatIDo } from "./WhatIDo";
 const list = [
   { content: <About />, color: "#FFF" },
   {
-    content: <WhatIDo/>, color: "lightgray"
+    content: <WhatIDo/>, color: "lightblue"
   },
   {
     content: <Projects/>,

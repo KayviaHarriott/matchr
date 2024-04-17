@@ -24,8 +24,8 @@ export const About = () => {
     <>
       <Box className="flex w-screen">
         <Box className="flex h-screen w-full justify-center items-center">
-          <Box className="flex px-[32px]  gap-4">
-            <Box className="w-1/3 max-w-[300px] flex flex-col items-end text-right flex flex-col gap-4 mt-[-12px]">
+          <Box className="flex px-[32px] gap-4">
+            <Box className="sm:w-1/3 max-w-[300px] flex flex-col items-end text-right flex flex-col gap-4 mt-[-12px]">
               <div>
                 <p
                   style={{ scrollSnapAlign: "center" }}
@@ -50,7 +50,7 @@ export const About = () => {
               </div>
               <p></p>
             </Box>
-            <Box className="w-2/3 max-w-[350px] sm:max-w-[400px]">
+            <Box className="sm:w-2/3 max-w-[350px] sm:max-w-[400px]">
               <div className="flex flex-col gap-3">
                 <p className="font-bold">Pellentesque in ex</p>
                 <p className="text-[14px]">
