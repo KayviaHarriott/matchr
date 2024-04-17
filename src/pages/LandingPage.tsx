@@ -16,22 +16,22 @@ import { Projects } from "./Projects";
 import { WhatIDo } from "./WhatIDo";
 
 const list = [
-  { content: <About />, color: "#FFF" },
-  {
-    content: <WhatIDo/>, color: "lightblue"
-  },
-  {
-    content: <Projects/>,
-    color: "lightred",
-  },
-  {
-    content: (
-      <div>
-        <p>three</p>
-      </div>
-    ),
-    color: "lightgreen",
-  },
+  { content: <About />, color: "#FFFF" },
+  // {
+  //   content: <WhatIDo/>, color: "lightblue"
+  // },
+  // {
+  //   content: <Projects/>,
+  //   color: "lightred",
+  // },
+  // {
+  //   content: (
+  //     <div>
+  //       <p>three</p>
+  //     </div>
+  //   ),
+  //   color: "lightgreen",
+  // },
 ];
 
 function useParallax(value: MotionValue<number>, distance: number) {
@@ -72,17 +72,17 @@ export const LandingPage = () => {
 
   return (
     <>
-      <NavigationBar />
+      {/* <NavigationBar /> */}
       <div className="bg-[yellow]">
         {list.map((item) => (
           <div>
             <Content content={item.content} color={item.color} />
           </div>
         ))}
-        <motion.div
+        {/* <motion.div
           className="fixed left-0 right-0 h-5 bg-[blue] bottom-20"
           style={{ scaleX }}
-        />
+        /> */}
       </div>
     </>
   );

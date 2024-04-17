@@ -8,7 +8,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, GitHub } from "@mui/icons-material";
+import { Instagram, GitHub, EmailRounded, Mail } from "@mui/icons-material";
 export const About = () => {
   //   const ref = useRef(null);
 
@@ -34,36 +34,70 @@ export const About = () => {
                   kaythedev
                 </p>
               </div>
-              <div className="flex flex-col items-end gap-1">
+              <div className="flex flex-col items-end gap-1 mt-[-12px]">
                 {["software engineer", "web developer"].map((items, key) => (
-                  <Box
-                    sx={{ borderRadius: 1, width: "fit-content" }}
-                    className="bg-[black] text-[white] text-[14px] flex justify-center items-center py-2 px-2"
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <p>{items}</p>
-                  </Box>
+                    {" "}
+                    <Box
+                      sx={{ borderRadius: 1, width: "fit-content" }}
+                      className="bg-[gray] text-[white] text-[14px] flex justify-center items-center py-2 px-2"
+                    >
+                      <p>{items}</p>
+                    </Box>{" "}
+                  </motion.div>
                 ))}
-                <div className="pt-4 flex flex-row gap-2 items-center justify-center text-center">
-                  <GitHub />
-                  <Instagram />
+                <div className="pt-2 flex flex-row gap-2 items-center justify-center text-center">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <a href="https://github.com/KayviaHarriott" target="_blank">
+                      {" "}
+                      <GitHub />
+                    </a>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <a
+                      href="https://instagram.com/kayviaharriott"
+                      target="_blank"
+                    >
+                      {" "}
+                      <Instagram />
+                    </a>
+                  </motion.div>
                 </div>
               </div>
               <p></p>
             </Box>
             <Box className="sm:w-2/3 max-w-[350px] sm:max-w-[400px]">
               <div className="flex flex-col gap-3">
-                <p className="font-bold">Pellentesque in ex</p>
+                <p className="font-bold">
+                  Oops... I'm not done building this yet!
+                </p>
                 <p className="text-[14px]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus convallis urna nec turpis aliquet, non pellentesque
-                  orci interdum. Aliquam ut est ante. Aliquam ac dui eu orci
-                  faucibus rutrum. Etiam porttitor est turpi.
+                  I'm currently working on my website... but I can still do
+                  yours! Feel free to contact me via email or instagram to talk
+                  about it~
                 </p>
                 <div className="">
                   <p className="font-light italic text-[14px]">
-                    Pellentesque in ex?
+                    Have a question?
                   </p>
-                  <p className="font-bold italic">Maecenas non consectetur</p>
+                  <a href="mailto:kayvia@kaythedev.com">
+                    {" "}
+                    <motion.div
+                      whileHover={{ scale: 1.05, x: 5 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <p className="font-bold italic">kayvia@kaythedev.com</p>
+                    </motion.div>
+                  </a>
                 </div>
                 {/* <p>
                       Vitae varius ex faucibus in. Maecenas non consectetur justo.
