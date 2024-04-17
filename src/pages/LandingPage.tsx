@@ -1,6 +1,6 @@
 // Photos from https://citizenofnowhe.re/lines-of-the-city
 import "./styles.css";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, Component, useEffect } from "react";
 import {
   motion,
   useScroll,
@@ -63,6 +63,10 @@ function Content({ content, color }: { content: ReactNode; color: string }) {
 }
 
 export const LandingPage = () => {
+  useEffect(() => {
+    document.title = "ktd | Kayvia Harriott";
+  }, []);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
