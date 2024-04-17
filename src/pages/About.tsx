@@ -8,7 +8,8 @@ import {
   MotionValue,
 } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, GitHub, EmailRounded, Mail } from "@mui/icons-material";
+import { EmailRounded, Mail } from "@mui/icons-material";
+import { Instagram, GitHub } from "react-feather";
 export const About = () => {
   //   const ref = useRef(null);
 
@@ -26,28 +27,40 @@ export const About = () => {
         <Box className="flex h-screen w-full justify-center items-center">
           <Box className="flex px-[32px] gap-4">
             <Box className="sm:w-1/3 max-w-[300px] flex flex-col items-end text-right flex flex-col gap-4 mt-[-12px]">
-              <div>
+              <div className="flex">
                 <p
-                  style={{ scrollSnapAlign: "center" }}
+                  //   style={{ scrollSnapAlign: "center" }}
                   className="text-[32px] font-bold"
                 >
-                  kaythedev
+                  kay
+                </p>
+                <p
+                  //   style={{ scrollSnapAlign: "center" }}
+                  className="text-[32px] text-[#ED6A59] font-bold"
+                >
+                  the
+                </p>
+                <p
+                  //   style={{ scrollSnapAlign: "center" }}
+                  className="text-[32px] font-bold"
+                >
+                  dev
                 </p>
               </div>
               <div className="flex flex-col items-end gap-1 mt-[-12px]">
                 {["software engineer", "web developer"].map((items, key) => (
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.9 }}
+                  //   <motion.div
+                  //     whileHover={{ scale: 1.05 }}
+                  //     whileTap={{ scale: 0.9 }}
+                  //   >
+                  // {" "}
+                  <Box
+                    sx={{ borderRadius: 1, width: "fit-content" }}
+                    className="bg-[black] text-[white] text-[14px] flex justify-center items-center py-2 px-2"
                   >
-                    {" "}
-                    <Box
-                      sx={{ borderRadius: 1, width: "fit-content" }}
-                      className="bg-[gray] text-[white] text-[14px] flex justify-center items-center py-2 px-2"
-                    >
-                      <p>{items}</p>
-                    </Box>{" "}
-                  </motion.div>
+                    <p>{items}</p>
+                  </Box>
+                  //   </motion.div>
                 ))}
                 <div className="pt-2 flex flex-row gap-2 items-center justify-center text-center">
                   <motion.div
@@ -95,7 +108,9 @@ export const About = () => {
                       whileHover={{ scale: 1.05, x: 5 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <p className="font-bold italic">kayvia@kaythedev.com</p>
+                      <p className="font-bold italic text-[#ED6A59]">
+                        kayvia@kaythedev.com
+                      </p>
                     </motion.div>
                   </a>
                 </div>
