@@ -1,6 +1,6 @@
 // Photos from https://citizenofnowhe.re/lines-of-the-city
 import "./styles.css";
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import {
   motion,
   useScroll,
@@ -9,30 +9,42 @@ import {
   MotionValue,
 } from "framer-motion";
 import React from "react";
+import { Box } from "@mui/system";
+
+const list = [
+  { label: "One", backgroundColor: "lightgreen" },
+  { label: "Two", backgroundColor: "lightblue" },
+  { label: "Three", backgroundColor: "lightpink" },
+];
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Image({ id }: { id: number }) {
+function Content({
+  content,
+}: {
+  content: { label: string; backgroundColor: string }[];
+}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <div
+    <Box
+      sx={{ backgroundColor: content.backgroundColor }}
       id="section"
       className="h-[100vh] flex justify-center items-center relative perspective-500"
     >
       <div ref={ref}>
-        <div>
+        <div className="bg-[lightblue]">
           {" "}
-          <p className="text-[blue]">kk</p>
+          <p className="text-[blue]">kk {content.label}</p>
         </div>
-        {/* <img src={`/${id}.jpg`} alt="A London skyscraper" /> */}
       </div>
-      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
-    </div>
+      {/* <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2> */}
+      {/* <motion.h2 style={{ y }}>{`#0011`}</motion.h2> */}
+    </Box>
   );
 }
 
@@ -46,12 +58,17 @@ export const LandingPage = () => {
 
   return (
     <>
-      {[1, 2, 3, 4, 5].map((image) => (
-        <p>
-          <Image id={image} />
-        </p>
-      ))}
-      <motion.div className="progress" style={{ scaleX }} />
+      <div className="bg-[yellow]">
+        {list.map((item) => (
+          <div>
+            <Content content={item} />
+          </div>
+        ))}
+        <motion.div
+          className="fixed left-0 right-0 h-5 bg-[blue] bottom-20"
+          style={{ scaleX }}
+        />
+      </div>
     </>
   );
 };
