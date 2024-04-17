@@ -11,24 +11,34 @@ import {
 import React from "react";
 import { Box } from "@mui/system";
 import { About } from "./About";
+import { NavigationBar } from "../components/NavigationBar";
+import { Projects } from "./Projects";
+import { WhatIDo } from "./WhatIDo";
 
 const list = [
-  {content: <About/> ,color: "lightblue"},
-  {content: <div><p>Two</p></div>, color: "lightyellow"},
-  {content: <div><p>three</p></div> , color: "lightgreen"},
+  { content: <About />, color: "#FFF" },
+  {
+    content: <WhatIDo/>, color: "lightgray"
+  },
+  {
+    content: <Projects/>,
+    color: "lightred",
+  },
+  {
+    content: (
+      <div>
+        <p>three</p>
+      </div>
+    ),
+    color: "lightgreen",
+  },
 ];
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Content({
-  content,
-  color
-}: {
-  content: ReactNode;
-  color: string;
-}) {
+function Content({ content, color }: { content: ReactNode; color: string }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
@@ -37,11 +47,10 @@ function Content({
     <Box
       sx={{ backgroundColor: color }}
       id="section"
-      className="h-[100vh] flex justify-center items-center relative perspective-500"
+      className="h-[100vh] flex relative perspective-500"
     >
       <div ref={ref}>
-       
-        <div >
+        <div>
           {" "}
           {content}
           {/* <p className="text-[blue]">kk {content.label}</p> */}
@@ -63,6 +72,7 @@ export const LandingPage = () => {
 
   return (
     <>
+      <NavigationBar />
       <div className="bg-[yellow]">
         {list.map((item) => (
           <div>
