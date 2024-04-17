@@ -10,11 +10,12 @@ import {
 } from "framer-motion";
 import React from "react";
 import { Box } from "@mui/system";
+import { About } from "./About";
 
 const list = [
-  { label: "One", backgroundColor: "lightgreen" },
-  { label: "Two", backgroundColor: "lightblue" },
-  { label: "Three", backgroundColor: "lightpink" },
+  {content: <About/> ,color: "lightblue"},
+  {content: <div><p>Two</p></div>, color: "lightyellow"},
+  {content: <div><p>three</p></div> , color: "lightgreen"},
 ];
 
 function useParallax(value: MotionValue<number>, distance: number) {
@@ -23,8 +24,10 @@ function useParallax(value: MotionValue<number>, distance: number) {
 
 function Content({
   content,
+  color
 }: {
-  content: { label: string; backgroundColor: string }[];
+  content: ReactNode;
+  color: string;
 }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
@@ -32,14 +35,16 @@ function Content({
 
   return (
     <Box
-      sx={{ backgroundColor: content.backgroundColor }}
+      sx={{ backgroundColor: color }}
       id="section"
       className="h-[100vh] flex justify-center items-center relative perspective-500"
     >
       <div ref={ref}>
-        <div className="bg-[lightblue]">
+       
+        <div >
           {" "}
-          <p className="text-[blue]">kk {content.label}</p>
+          {content}
+          {/* <p className="text-[blue]">kk {content.label}</p> */}
         </div>
       </div>
       {/* <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2> */}
@@ -61,7 +66,7 @@ export const LandingPage = () => {
       <div className="bg-[yellow]">
         {list.map((item) => (
           <div>
-            <Content content={item} />
+            <Content content={item.content} color={item.color} />
           </div>
         ))}
         <motion.div

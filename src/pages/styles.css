@@ -13,12 +13,12 @@ body {
     --yellow: #ffbb00;
   
     --background: var(--black);
-    --accent: var(--white);
+    /* --accent: var(--white); */
   
     margin: 0;
     padding: 0;
     background-color: var(--background);
-    color: var(--accent);
+    /* color: var(--accent); */
   }
   
   * {
