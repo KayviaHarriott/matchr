@@ -14,14 +14,17 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.15",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "feather-icons": "^4.29.1",
     "framer-motion": "^11.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "react-router-dom": "^6.22.3",
     "react-wavify": "^1.10.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@types/feather-icons": "^4.29.4",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
