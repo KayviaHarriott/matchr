@@ -1,35 +1,21 @@
 import { Box, Button } from "@mui/material";
 // import couple_image from "/imgs/header-image.jpg";
 import bottomDivider from "/imgs/dividers/wavesOpacity_bottom.svg";
-import topDivider from "/imgs/dividers/wavesOpacity_top.svg";
 import { motion } from "framer-motion";
+import Wave from "react-wavify";
 
 export const LandingPage = () => {
   const m = motion;
   return (
     <div className="">
-      {/* <Box className="h-[300px] bg-[lightblue]">
-        <p>top</p>
-      </Box> */}
-      {/* <Box className="w-full flex gap-2 bg-[lightgray] py-[40px] px-[120px]"> */}
-      {/* <Box className="lg:w-1/2 flex justify-end pr-[400px]">
-        <div className="hidden lg:flex relative pl-[40px]">
-          <div className="mr-[-40px]">
-            <img src={couple_image} className="w-[200px] rounded-sm" />
-          </div>
-          <div className="mt-[100px] mr-[50px]">
-            <img src={couple_image} className="w-[200px] rounded-lg absolute" />
-          </div>
-        </div>
-      </Box> */}
       <Box sx={{ paddingY: 8, backgroundColor: "#AA6BD4" }}></Box>
-      <Box className="bg-[#EFEBF8]">
+      <Box className="bg-[transparent]">
         <img src={bottomDivider} />
-        <Box className="flex justify-center">
+        <Box className="flex justify-center bg-transparent">
           <m.div
-          // animate={{ rotate: [0, 1, 0, 2, 0] }} // Rotate values in degrees
-          // transition={{ duration: 8, repeat: Infinity }} // Duration of each loop
-          // style={{ display: "inline-block" }} // Ensures the animation doesn't affect layout
+            animate={{ rotate: [0, 1, 0, 2, 0] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            style={{ display: "inline-block" }}
           >
             <Box
               sx={{
@@ -98,15 +84,37 @@ export const LandingPage = () => {
             </Box>
           </m.div>
         </Box>
-        <Box sx={{ transform: "rotateX(180deg)" }}>
-        
-          <img src={topDivider} />
+        <Box className="relative">
+          <Wave
+            className="absolute mt-[24px]"
+            fill="#AA6BD4"
+            paused={false}
+            style={{ display: "flex" }}
+            options={{
+              height: 10,
+              amplitude: 15,
+              speed: 0.2,
+              points: 2,
+            }}
+          />
+          <Wave
+            className="mt-[24px]"
+            fill="#AA6BA4"
+            paused={false}
+            style={{ display: "flex" }}
+            options={{
+                
+              height: 10,
+              amplitude: 20,
+              speed: 0.3,
+              points: 3,
+            }}
+          />
         </Box>
-
-
       </Box>
-      <Box sx={{ height: "32px", marginTop: "-1px", backgroundColor: "#AA6BD4" }}></Box>
-      {/* </Box> */}
+      <Box
+        sx={{ height: "32px", marginTop: "-1px", backgroundColor: "#AA6BD4" }}
+      ></Box>
     </div>
   );
 };
