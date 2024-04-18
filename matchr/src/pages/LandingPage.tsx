@@ -2,13 +2,16 @@ import { Box, Button, Icon } from "@mui/material";
 // import couple_image from "/imgs/header-image.jpg";
 import { motion } from "framer-motion";
 import { Footer } from "./Footer";
-import Figma from "feather-icons"
+import Figma from "feather-icons";
 // import MessageSquare from "feather-icons"
+import { MessageSquare } from "react-feather";
+import { InfoBubble } from "../components/InfoBubble";
 
 export const LandingPage = () => {
   const m = motion;
   return (
-    <div className="">
+    <div className="w-screen ">
+      <Box> </Box>
       <Box className="py-[32px]">
         <Box className="flex justify-center">
           <m.div
@@ -89,38 +92,14 @@ export const LandingPage = () => {
           <Box>
             <p>How it Works</p>
           </Box>
-          <Box>
-          <Box
-              sx={{
-                backgroundColor: "white",
-                border: 1,
-                borderColor: "rgba(203,156,241,0.1)",
-                boxShadow: "4px 4px 10px 0px rgba(203,156,241,0.2)",
-                px: 3,
-                pb: 4,
-                pt: 2,
-                borderRadius: 2,
-              }}
-              className=""
-            >
-              <div className="flex flex-col gap-4">
-                {/* <p className="text-[13px] mb-[0px] mb-[-16px]">Duis fringilla</p> */}
-                <div className="flex flex-col gap-1">
-                 <p>Icon</p>
-                 
-                  <p className="max-w-[400px] text-[black] font-bold">
-                    Step 1
-                  </p>
-                  <p className="max-w-[400px] text-[black] font-light">
-                    Nunc sem eros, pulvinar vel consectetur eget, molestie vel
-                    nibh. Quisque venenatis aliquam neque non ultrices. Aliquam
-                    vitae enim erat. Duis ultricies id tortor ut condimentum.
-                    Aliquam nec consectetur elit.
-                  </p>
-                </div>
-              </div>
-            </Box>
-          </Box>
+          <InfoBubble
+            icon={<MessageSquare />}
+            subText="Step 1"
+            title="Get to Know Eachother"
+            description={`Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
+            Quisque venenatis aliquam neque non ultrices. 
+            Aliquam vitae enim erat.`}
+          />
         </Box>
       </Box>
       <Footer />
