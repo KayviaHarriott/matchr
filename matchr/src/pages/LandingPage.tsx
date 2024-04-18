@@ -1,14 +1,41 @@
-import { Box, Button, Icon } from "@mui/material";
+import { Box, Button /*Icon */ } from "@mui/material";
 // import couple_image from "/imgs/header-image.jpg";
 import { motion } from "framer-motion";
 import { Footer } from "./Footer";
-import Figma from "feather-icons";
+// import Figma from "feather-icons";
 // import MessageSquare from "feather-icons"
 import { MessageSquare } from "react-feather";
 import { InfoBubble } from "../components/InfoBubble";
 
 export const LandingPage = () => {
   const m = motion;
+  const list = [
+    {
+      icon: <MessageSquare />,
+      subText: "Step 1",
+      title: "Get to Know Eachother",
+      description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
+            Quisque venenatis aliquam neque non ultrices. 
+            Aliquam vitae enim erat.`,
+    },
+    {
+      icon: <MessageSquare />,
+      subText: "Step 2",
+      title: "Get to Know Eachother",
+      description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
+            Quisque venenatis aliquam neque non ultrices. 
+            Aliquam vitae enim erat.`,
+    },
+    {
+      icon: <MessageSquare />,
+      subText: "Step 3",
+      title: "Get to Know Eachother",
+      description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
+            Quisque venenatis aliquam neque non ultrices. 
+            Aliquam vitae enim erat.`,
+    },
+  ];
+
   return (
     <div className="w-screen ">
       <Box> </Box>
@@ -87,19 +114,28 @@ export const LandingPage = () => {
           </m.div>
         </Box>
       </Box>
-      <Box className="py-[32px] px-[15%] bg-[#EFEBF8]">
-        <Box className="flex">
-          <Box>
-            <p>How it Works</p>
-          </Box>
-          <InfoBubble
-            icon={<MessageSquare />}
-            subText="Step 1"
-            title="Get to Know Eachother"
-            description={`Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
-            Quisque venenatis aliquam neque non ultrices. 
-            Aliquam vitae enim erat.`}
-          />
+      <Box className="py-[32px] px-[15%] bg-[#EFEBF8] flex">
+        <Box>
+          <p>How it Works</p>
+        </Box>
+        <Box className="flex flex-col gap-2">
+          {list.map((item, index) => (
+            <m.div
+              key={index}
+              whileHover={{ scale: 1.02 }}
+              
+              // onClick={{ scale: 1.01 }}
+              onHoverStart={() => {}}
+              onHoverEnd={() => {}}
+            >
+              <InfoBubble
+                icon={item.icon}
+                subText={item.subText}
+                title={item.title}
+                description={item.description}
+              />
+            </m.div>
+          ))}
         </Box>
       </Box>
       <Footer />
