@@ -1,8 +1,6 @@
 import { Box } from "@mui/material";
 import { /*animate,*/ motion /*useScroll*/ } from "framer-motion";
 import { Footer } from "./Footer";
-// import Figma from "feather-icons";
-// import MessageSquare from "feather-icons"
 import { Smartphone, MessageSquare /*Calendar*/ } from "react-feather";
 import { InfoBubble } from "../components/InfoBubble";
 import photo1 from "/imgs/man-smiling-at-phone.jpg";
@@ -60,7 +58,6 @@ export const LandingPage = () => {
                       borderRadius: 2,
                       mr: 5,
                       mb: 5,
-                      // transform:
                       ml: 5,
                     }}
                   ></Box>
@@ -69,8 +66,6 @@ export const LandingPage = () => {
                       transform: "rotate(10deg)",
                       backgroundColor: "white",
                       boxShadow: "3px 3px 10px 0px rgba(0,0,0,0.1)",
-                      // borderColor: "rgba(0,0,0,0.1)",
-                      // borderWidth: 1,
                       borderRadius: 1,
                     }}
                     className="absolute bottom-0 right-0 mt-[20px] text-center"
@@ -97,10 +92,7 @@ export const LandingPage = () => {
                     How it Works
                   </p>
                   <m.div
-                    // initial={{ opacity: 0 }}
-                    // whileInView={{ opacity: 1, scale: 2 }}
                     whileFocus={{ opacity: 1, scale: 2 }}
-                    // while
                     viewport={{ once: true }}
                   >
                     <Box className="flex flex-col gap-2">
