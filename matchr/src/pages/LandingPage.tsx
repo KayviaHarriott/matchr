@@ -1,14 +1,17 @@
 import { Box, Button /*Icon */ } from "@mui/material";
 import couple_image from "/imgs/header-image.jpg";
-import { motion } from "framer-motion";
+import { /*animate,*/ motion /*useScroll*/ } from "framer-motion";
 import { Footer } from "./Footer";
 // import Figma from "feather-icons";
 // import MessageSquare from "feather-icons"
-import { Smartphone, MessageSquare, Calendar } from "react-feather";
+import { Smartphone, MessageSquare /*Calendar*/ } from "react-feather";
 import { InfoBubble } from "../components/InfoBubble";
-
+import photo1 from "/imgs/man-smiling-at-phone.jpg";
+import qrCode from "/imgs/qr-code.png";
 export const LandingPage = () => {
   const m = motion;
+  // const { scrollYProgress, scrollXProgress } = useScroll();
+
   const list = [
     {
       icon: <Smartphone />,
@@ -26,14 +29,14 @@ export const LandingPage = () => {
            Aliquam vitae enim erat.`,
       animate: { rotate: [0, 3, 0, -2, 0] },
     },
-    {
-      icon: <Calendar />,
-      subText: "Step 3",
-      title: "Lorem Ipsum Dolor",
-      description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
-           Aliquam vitae enim erat.`,
-      animate: { rotate: [0, -4, 0, 2, 0] },
-    },
+    // {
+    //   icon: <Calendar />,
+    //   subText: "Step 3",
+    //   title: "Lorem Ipsum Dolor",
+    //   description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh.
+    //        Aliquam vitae enim erat.`,
+    //   animate: { rotate: [0, -4, 0, 2, 0] },
+    // },
   ];
 
   return (
@@ -117,32 +120,59 @@ export const LandingPage = () => {
       </Box>
 
       <Box className="py-[56px]">
-        <Box className="px-[15%]">
-          <Box className="pb-2">
-            <p className="text-center font-bold text-[24px] text-[#7208B7]">
-              How it Works
+        <Box className="px-[15%] flex">
+          <Box className="flex flex-col w-full">
+            <p className="text-center font-bold text-[40px] w-full">
+              Get the App Today!
             </p>
+            <Box sx={{ 
+              backgroundImage: `url(${photo1})`,
+              backgroundSize: "cover",
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: "center",
+              width: '300px', 
+              height: '400px',
+              borderRadius: 1,
+              // transform: 
+               
+               }}></Box>
           </Box>
-          <Box className="flex flex-col gap-2">
-            {list.map((item, index) => (
+          <Box className="flex w-full justify-end">
+            <Box>
+              <p className="text-center font-bold text-[24px] text-[#7208B7] pb-4">
+                How it Works
+              </p>
               <m.div
-                key={index}
-                // whileHover={{ scale: 1.02 }}
-                // // onClick={{ scale: 1.01 }}
-                // onHoverStart={() => {}}
-                // onHoverEnd={() => {}}
-                animate={item.animate}
-                transition={{ duration: 8, repeat: Infinity }}
-                style={{ display: "inline-block" }}
+                // initial={{ opacity: 0 }}
+                // whileInView={{ opacity: 1, scale: 2 }}
+                whileFocus={{ opacity: 1, scale: 2 }}
+                // while
+                viewport={{ once: true }}
               >
-                <InfoBubble
-                  icon={item.icon}
-                  subText={item.subText}
-                  title={item.title}
-                  description={item.description}
-                />
+                <Box className="flex flex-col gap-2">
+                  {list.map((item, index) => (
+                    <m.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                    >
+                      <m.div
+                        key={index}
+                        animate={item.animate}
+                        transition={{ duration: 8, repeat: Infinity }}
+                        style={{ display: "inline-block" }}
+                      >
+                        <InfoBubble
+                          icon={item.icon}
+                          subText={item.subText}
+                          title={item.title}
+                          description={item.description}
+                        />
+                      </m.div>
+                    </m.div>
+                  ))}
+                </Box>
               </m.div>
-            ))}
+            </Box>
           </Box>
         </Box>
       </Box>
