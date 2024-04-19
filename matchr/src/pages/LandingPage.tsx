@@ -41,105 +41,67 @@ export const LandingPage = () => {
 
   return (
     <div className="w-screen ">
-      <Box> </Box>
-      <Box className="py-[32px] px-[15%] bg-[#AA6BD4]">
-        <Box className="flex justify-center">
-          <img className="w-[200px] rounded-lg" src={couple_image} />
-          <m.div
-          // animate={{ rotate: [0, 1, 0, 2, 0] }}
-          // transition={{ duration: 8, repeat: Infinity }}
-          // style={{ display: "inline-block" }}
-          >
-            <Box
-              sx={{
-                backgroundColor: "white",
-                border: 1,
-                borderColor: "rgba(203,156,241,0.1)",
-                boxShadow: "4px 4px 10px 0px rgba(203,156,241,0.2)",
-                px: 3,
-                pb: 4,
-                pt: 2,
-                borderRadius: 2,
-              }}
-              className=""
-            >
-              <div className="flex flex-col gap-4">
-                {/* <p className="text-[13px] mb-[0px] mb-[-16px]">Duis fringilla</p> */}
-                <div className="flex flex-col gap-1">
-                  <p className="font-black text-[#7208B7] text-[32px]">
-                    Matchr
-                  </p>
-                  <p className="max-w-[400px] text-[black] font-light">
-                    Nunc sem eros, pulvinar vel consectetur eget, molestie vel
-                    nibh. Quisque venenatis aliquam neque non ultrices. Aliquam
-                    vitae enim erat. Duis ultricies id tortor ut condimentum.
-                    Aliquam nec consectetur elit.
-                  </p>
-                </div>
-                <p className="max-w-[400px] text-[#494949] italic font-semibold">
-                  Nulla fringilla pharetra enim, nec vestibulum metus
-                </p>
-                <div className="flex gap-1 pt-1">
-                  <Button
-                    sx={{
-                      width: "fit-content",
-                      boxShadow: "none",
-                      backgroundColor: "#7208B7",
-                      //   fontWeight: "bold",
-                      color: "white",
-                      "&:hover": {
-                        backgroundColor: "#AA6BD4",
-                        boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.3)",
-                      },
-                    }}
-                    variant="contained"
-                  >
-                    Nullam
-                  </Button>
-                  <Button
-                    sx={{
-                      width: "fit-content",
-                      boxShadow: "none",
-                      border: 2,
-                      backgroundColor: "transparent",
-                      color: "#7208B7",
-                      "&:hover": {
-                        backgroundColor: "white",
-                        boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.3)",
-                      },
-                    }}
-                    variant="contained"
-                  >
-                    Vivamus
-                  </Button>
-                </div>
-              </div>
-            </Box>
-          </m.div>
-        </Box>
+      {/* <Box> </Box>AA6BD4 */}
+      <Box className="py-[8px] px-[15%] bg-[#7208B7]">
+        <p className="font-black text-[white] text-[24px] text-center">
+          Matchr
+        </p>
       </Box>
-
-      <Box className="py-[56px]">
+     
+      <Box className="pt-[32px] pb-[56px]">
+      <p className="text-center font-bold text-[32px] w-full">
+        Download today!
+      </p>
         <Box className="px-[15%] flex">
-          <Box className="flex flex-col w-full">
-            <p className="text-center font-bold text-[40px] w-full">
-              Get the App Today!
-            </p>
-            <Box sx={{ 
-              backgroundImage: `url(${photo1})`,
-              backgroundSize: "cover",
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: "center",
-              width: '300px', 
-              height: '400px',
-              borderRadius: 1,
-              // transform: 
-               
-               }}></Box>
+          <Box className="flex flex-col w-full justify-center items-center pt-10">
+            <Box className="relative flex flex-col">
+              <Box
+                className="w-full"
+                sx={{
+                  transform: "rotate(-2deg)",
+                  backgroundImage: `url(${photo1})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  width: "300px",
+                  height: "400px",
+                  borderRadius: 2,
+                  mr: 5,
+                  mb: 5,
+                  // transform:
+                  ml: 5,
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  transform: "rotate(10deg)",
+                  backgroundColor: "white",
+                  boxShadow: "3px 3px 10px 0px rgba(0,0,0,0.1)",
+                  // borderColor: "rgba(0,0,0,0.1)",
+                  // borderWidth: 1,
+                  borderRadius: 1,
+                }}
+                className="absolute bottom-0 right-0 mt-[20px] text-center"
+              >
+                <Box
+                  sx={{
+                    backgroundImage: `url(${qrCode})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    width: "150px",
+                    height: "150px",
+                    borderRadius: 1,
+                    // transform:
+                  }}
+                ></Box>
+                <p className="font-bold pb-2 text-[14px]">Scan Here!</p>
+              </Box>
+            </Box>
           </Box>
           <Box className="flex w-full justify-end">
             <Box>
-              <p className="text-center font-bold text-[24px] text-[#7208B7] pb-4">
+              <p className="text-center font-bold text-[24px] text-[#7208B7] pt-[32px] pb-4">
                 How it Works
               </p>
               <m.div
