@@ -1,46 +1,47 @@
 import { Box, Button /*Icon */ } from "@mui/material";
-// import couple_image from "/imgs/header-image.jpg";
+import couple_image from "/imgs/header-image.jpg";
 import { motion } from "framer-motion";
 import { Footer } from "./Footer";
 // import Figma from "feather-icons";
 // import MessageSquare from "feather-icons"
-import { MessageSquare } from "react-feather";
+import { Smartphone, MessageSquare, Calendar } from "react-feather";
 import { InfoBubble } from "../components/InfoBubble";
 
 export const LandingPage = () => {
   const m = motion;
   const list = [
     {
-      icon: <MessageSquare />,
+      icon: <Smartphone />,
       subText: "Step 1",
-      title: "Get to Know Eachother",
+      title: "Lorem Ipsum Dolor",
       description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
-            Quisque venenatis aliquam neque non ultrices. 
-            Aliquam vitae enim erat.`,
+           Aliquam vitae enim erat.`,
+      animate: { rotate: [0, 1, 0, 2, 0] },
     },
     {
       icon: <MessageSquare />,
       subText: "Step 2",
-      title: "Get to Know Eachother",
+      title: "Lorem Ipsum Dolor",
       description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
-            Quisque venenatis aliquam neque non ultrices. 
-            Aliquam vitae enim erat.`,
+           Aliquam vitae enim erat.`,
+      animate: { rotate: [0, 3, 0, -2, 0] },
     },
     {
-      icon: <MessageSquare />,
+      icon: <Calendar />,
       subText: "Step 3",
-      title: "Get to Know Eachother",
+      title: "Lorem Ipsum Dolor",
       description: `Nunc sem eros, pulvinar vel consectetur eget, molestie vel nibh. 
-            Quisque venenatis aliquam neque non ultrices. 
-            Aliquam vitae enim erat.`,
+           Aliquam vitae enim erat.`,
+      animate: { rotate: [0, -4, 0, 2, 0] },
     },
   ];
 
   return (
     <div className="w-screen ">
       <Box> </Box>
-      <Box className="py-[32px]">
+      <Box className="py-[32px] px-[15%] bg-[#AA6BD4]">
         <Box className="flex justify-center">
+          <img className="w-[200px] rounded-lg" src={couple_image} />
           <m.div
           // animate={{ rotate: [0, 1, 0, 2, 0] }}
           // transition={{ duration: 8, repeat: Infinity }}
@@ -49,9 +50,9 @@ export const LandingPage = () => {
             <Box
               sx={{
                 backgroundColor: "white",
-                // border: 1,
-                // borderColor: "rgba(203,156,241,0.1)",
-                // boxShadow: "4px 4px 10px 0px rgba(203,156,241,0.2)",
+                border: 1,
+                borderColor: "rgba(203,156,241,0.1)",
+                boxShadow: "4px 4px 10px 0px rgba(203,156,241,0.2)",
                 px: 3,
                 pb: 4,
                 pt: 2,
@@ -114,28 +115,35 @@ export const LandingPage = () => {
           </m.div>
         </Box>
       </Box>
-      <Box className="py-[32px] px-[15%] bg-[#EFEBF8] flex">
-        <Box>
-          <p>How it Works</p>
-        </Box>
-        <Box className="flex flex-col gap-2">
-          {list.map((item, index) => (
-            <m.div
-              key={index}
-              whileHover={{ scale: 1.02 }}
-              
-              // onClick={{ scale: 1.01 }}
-              onHoverStart={() => {}}
-              onHoverEnd={() => {}}
-            >
-              <InfoBubble
-                icon={item.icon}
-                subText={item.subText}
-                title={item.title}
-                description={item.description}
-              />
-            </m.div>
-          ))}
+
+      <Box className="py-[56px]">
+        <Box className="px-[15%]">
+          <Box className="pb-2">
+            <p className="text-center font-bold text-[24px] text-[#7208B7]">
+              How it Works
+            </p>
+          </Box>
+          <Box className="flex flex-col gap-2">
+            {list.map((item, index) => (
+              <m.div
+                key={index}
+                // whileHover={{ scale: 1.02 }}
+                // // onClick={{ scale: 1.01 }}
+                // onHoverStart={() => {}}
+                // onHoverEnd={() => {}}
+                animate={item.animate}
+                transition={{ duration: 8, repeat: Infinity }}
+                style={{ display: "inline-block" }}
+              >
+                <InfoBubble
+                  icon={item.icon}
+                  subText={item.subText}
+                  title={item.title}
+                  description={item.description}
+                />
+              </m.div>
+            ))}
+          </Box>
         </Box>
       </Box>
       <Footer />

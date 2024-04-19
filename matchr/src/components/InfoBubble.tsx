@@ -45,7 +45,7 @@ export const InfoBubble: FC<InfoBubbleProps> = ({
             </Box>
             <div className="flex flex-col">
               <p className="text-[gray] font-bold text-[14px]">{subText}</p>
-              <p className="text-[black] font-bold mt-[-2px]">{title}</p>
+              <p className="text-[#7208B7] font-bold mt-[-2px]">{title}</p>
             </div>
             <p className="text-[gray] font-light mt-[-5px]">{description}</p>
           </div>
